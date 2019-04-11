@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: true;
+  width: 50px;
+  background-color: #9ba5a4;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 110%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #9ba5a4;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+</style>
+<style>
+
+  d {
+    color:#847373;
+    font-weight: 600;
+    font-size:20px;
+    white-space: pre;
+  }
+</style>
+<body style="text-align:center;">
+<p>
+<d>This is some text. This is some text. This is some text. This is some text.
+    This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</d>
+     <d>Left Tooltip w/ Right Arrow</d>
+</p>
+
+
+</body>
+</html>

@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr-FR" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width = 1030, user-scalable = no">-->
+<!--    <meta name="viewport" content="width = 1030, user-scalable = no">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <meta name="viewport" content="user-scalable = no">-->
+    <meta charset="UTF-8"/>
+
+    <title>Bcs||Arena</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+<link rel='stylesheet' id='woocommerce-layout-css'  href='https://www.dapper.fr/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=3.2.6' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='https://www.dapper.fr/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=3.2.6' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='https://www.dapper.fr/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=3.2.6' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.dapper.fr/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.dapper.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link rel='stylesheet' id='ttip'  href="{%static 'css/ttip.css' %}" type='text/css' media='all' />
+
+
+    <link rel="stylesheet" type="text/css" media="all" href="{%static 'css/app.min.css' %}"/>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-46375104-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <meta name="google-site-verification" content="bIGQ6v-lBlBj3xy8JBl7G6rWZ1Oo936pfHFEqROWXA8" />
+
+
+    {%block extracss%}
+    {%endblock%}
+
+</head>
+
+<body >
+
+    <div id="mobile-warning">
+        <div class="d-table">
+            <div class="d-cell">
+                <p>Version Mobile<br/>bientôt disponible</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<div id="main-loader">
+
+    </div>
+
+
+<div id="wrapper">
+
+
+    <header style=" background-color:rgb(191, 173, 111)">
+        <div class="side-left col-30 left-nav">
+            <div id="burger" class="full-button">
+                <div class="spans">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="close top"></span><span class="close bottom"></span>
+                </div>
+            </div>
+                            <a href="" class="logo">
+                    <img src="http://cliparts.co/cliparts/Acb/KnX/AcbKnXqc4.svg" class="svg" alt="fondation dapper" style="width:80px;">
+                </a>
+
+                    </div>
+
+          <div class="side-middle right-nav" style=" background-color: rgb(191, 173, 111)">
+            <div class="side-left">
+                <div class="d-table links">
+                    <div class="d-cell">
+                       <p class="link">THE BANGLADESH'S LARGEST BCS PORTAL</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        <div class="side-right right-nav" style=" background-color: rgb(191, 173, 111)">
+            <div id="alts-nav" class="side-left">
+                <div class="d-table links">
+                    <div class="d-cell">
+                        {% if request.user.is_authenticated %}
+                        <span>welcome {{user.username}}</span>
+                        <a href="/info/logout/" class="link">LOGOUT</a>
+
+                        {%else%}
+                        <a href="/info/login/?next={{request.path}}" class="link">LOGIN</a>
+                        <a href="/info/register/?next={{request.path}}" class="link">REGISTER</a>
+
+                        {%endif%}
+
+
+                    </div>
+                </div>
+            </div>
+
+
+              {%block home%}
+
+                {%endblock%}
+
+
+        <!--
+         <nav id="menu-shop">
+
+            <div class="shop-nav">
+                <a href="/info/home/" class="title">Home</a>
+
+            </div>
+
+            <div class="shop-nav">
+                <a href="https://www.dapper.fr/categorie-produit/livres/" class="title">Editions Dapper</a>
+                <ul>
+
+                            <li><a href="https://www.dapper.fr/categorie-produit/livres/dapper-beaux-arts/">Dapper Beaux-Arts</a></li>
+
+
+                            <li><a href="https://www.dapper.fr/categorie-produit/livres/dapper-jeunesse/">Dapper Jeunesse</a></li>
+
+
+                            <li><a href="https://www.dapper.fr/categorie-produit/livres/dapper-litterature/">Dapper Littérature</a></li>
+
+
+                            <li><a href="https://www.dapper.fr/categorie-produit/livres/e-book/">E-book</a></li>
+
+                                     </ul>
+            </div>-->
+
+
+</nav>
+
+   </div>
+
+
+<nav id="menu" style="border: 1px solid black;width:device-width; height:device-height; overflow:scroll ;overflow-y:scroll; overflow-x:hidden;">
+    <div id="menu-c">
+        <div id="main-nav" class="side-left col-60">
+            <div class="d-table">
+                <div class="d-cell" style="font-size: 68%">
+
+
+                    {% block mainnav%}
+
+                    {%endblock%}
+
+                </div>
+            </div>
+        </div>
+
+        <div id="sub-nav" class="side-left col-60">
+
+            {% block subnav%}
+
+            {%endblock%}
+
+        </div>
+
+        <div id="main-nav-mobile">
+            <ul>
+                <li class="main-li w-sub">
+
+                        <p class="main-child-mobile"><span>Fondation</span></p>
+                        <ul class="sub-child-mobile">
+                            <li class="page_item page-item-22 page_item_has_children"><a href="https://www.dapper.fr/fondation/presentation/">Présentation</a>
+<ul class='children'>
+	<li class="page_item page-item-10"><a href="https://www.dapper.fr/fondation/presentation/historique/">Historique</a></li>
+	<li class="page_item page-item-16"><a href="https://www.dapper.fr/fondation/presentation/lequipe/">L&#8217;équipe</a></li>
+	<li class="page_item page-item-18"><a href="https://www.dapper.fr/fondation/presentation/le-conseil-dadministration/">Le conseil d&#8217;administration</a></li>
+	<li class="page_item page-item-12"><a href="https://www.dapper.fr/fondation/presentation/les-fondateurs/">Les fondateurs</a></li>
+	<li class="page_item page-item-14"><a href="https://www.dapper.fr/fondation/presentation/orientations/">Orientations</a></li>
+</ul>
+
+
+
+</li>
+<li class="page_item page-item-24 page_item_has_children"><a href="https://www.dapper.fr/fondation/partenaires-et-collaborations/">Partenaires et collaborations</a>
+<ul class='children'>
+	<li class="page_item page-item-28"><a href="https://www.dapper.fr/fondation/partenaires-et-collaborations/nos-partenaires-et-collaborations/">Nos partenaires et collaborations</a></li>
+</ul>
+</li>
+<li class="page_item page-item-30 page_item_has_children"><a href="https://www.dapper.fr/fondation/nous-soutenir/">Nous soutenir</a>
+<ul class='children'>
+	<li class="page_item page-item-32"><a href="https://www.dapper.fr/fondation/nous-soutenir/mecenat/">Mécénat</a></li>
+</ul>
+</li>
+<li class="page_item page-item-20"><a href="https://www.dapper.fr/fondation/revue-de-presse/">Revue de presse</a></li>
+                        </ul>
+
+                    </li>
+
+                                                                     <li class="main-li">
+                        <a class="main-child-mobile" href="https://www.dapper.fr/arts-anciens/">
+                            Arts anciens                        </a>
+
+                    </li>
+
+                                                                     <li class="main-li">
+                        <a class="main-child-mobile" href="https://www.dapper.fr/art-contemporain/">
+                            Art contemporain                        </a>
+
+                    </li>
+
+                                                                     <li class="main-li w-sub">
+
+                        <p class="main-child-mobile"><span>Ressources pédagogiques</span></p>
+                        <ul class="sub-child-mobile">
+                            <li class="page_item page-item-226"><a href="https://www.dapper.fr/ressources-pedagogiques/espace-enseignants/">Espace enseignants</a></li>
+<li class="page_item page-item-221"><a href="https://www.dapper.fr/ressources-pedagogiques/espace-enfants/">Espace enfants</a></li>
+<li class="page_item page-item-235"><a href="https://www.dapper.fr/ressources-pedagogiques/videotheque/">Vidéothèque</a></li>
+                        </ul>
+
+                    </li>
+
+                                                                     <li class="main-li w-sub">
+
+                        <p class="main-child-mobile"><span>Expositions et actions</span></p>
+                        <ul class="sub-child-mobile">
+                            <li class="page_item page-item-138"><a href="https://www.dapper.fr/expositions-actions/actions/">Actions</a></li>
+<li class="page_item page-item-141"><a href="https://www.dapper.fr/expositions-actions/evenements/">Événements</a></li>
+<li class="page_item page-item-135"><a href="https://www.dapper.fr/expositions-actions/expositions/">Expositions</a></li>
+                        </ul>
+
+                    </li>
+
+                                                                     <li class="main-li">
+                        <a class="main-child-mobile" href="https://www.dapper.fr/actualites/">
+                            Actualités                        </a>
+
+                    </li>
+
+                                                                     <li class="main-li">
+                        <a class="main-child-mobile" href="https://www.dapper.fr/contact/">
+                            Contact                        </a>
+
+                    </li>
+
+                                                                     <li class="main-li w-sub">
+
+                        <p class="main-child-mobile"><span>Boutique</span></p>
+                        <ul class="sub-child-mobile">
+                            <li class="page_item page-item-184"><a href="https://www.dapper.fr/boutique/commande/">Commande</a></li>
+<li class="page_item page-item-186"><a href="https://www.dapper.fr/boutique/conditions-generales-de-vente/">Conditions générales de vente</a></li>
+<li class="page_item page-item-189"><a href="https://www.dapper.fr/boutique/mon-compte/">Mon compte</a></li>
+<li class="page_item page-item-179"><a href="https://www.dapper.fr/boutique/panier/">Panier</a></li>
+                        </ul>
+
+                    </li>
+
+                             </ul>
+
+            <div id="push-nav-mobile">
+
+                <a class="footer-push" href="https://www.dapper.fr/boutique/">
+
+                    <div class="img-c bg-element boutique">
+                        <img src="https://www.dapper.fr/wp-content/themes/dapper/assets/img/src/bg/bg-losange.jpg" alt="" class="cropping center">
+                    </div>
+
+                    <div class="d-table">
+                        <div class="d-cell">
+                            <span class="icon-cart"></span>
+                            <p>La boutique</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="footer-push"  href="https://www.dapper.fr/lexidapper/">
+
+                    <div class="img-c bg-element lexi">
+                        <img src="https://www.dapper.fr/wp-content/themes/dapper/assets/img/src/bg/bg-map.jpg" alt="" class="cropping center">
+                    </div>
+
+                    <div class="d-table">
+                        <div class="d-cell">
+                            <span class="icon-lexidapper"></span>
+                            <p>Lexidapper</p>
+                        </div>
+                    </div>
+                </a>
+
+
+
+                <a class="footer-push"  href="https://www.dapper.fr/selection/">
+
+                    <div class="img-c bg-element wishlist">
+                        <img src="https://www.dapper.fr/wp-content/themes/dapper/assets/img/src/bg/bg-wishlist.jpg" alt="" class="cropping center">
+                    </div>
+
+                    <div class="d-table">
+                        <div class="d-cell">
+                            <span class="icon-coeur"></span>
+                            <p>Sélection</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <div id="bottom-nav">
+
+
+
+            <div class="search-c">
+                <div id="search-input-header">
+                    <form action="https://www.dapper.fr" method="post" class="form-c" id="formSearchMobileHeader">
+                        <input type="text" name="s" placeholder="Rechercher" id="searchinputHeader"/>
+                        <!--                    <input type="submit" id="searchsubmit"  value="" class="bt-submit-search bt-submit icon-arrow">-->
+                        <div class="bt-submit" id="searchSubmitHeader"><span class="icon-search"></span></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+</nav>
+
+    </header>
+
+
+
+    {%block belowheader%}
+
+    {%endblock%}
+
+      <div class="js-smooth-scroll">
+
+<main id="homepage">
+
+    {%block main%}
+
+
+    {%endblock%}
+
+      <div class="container">
+          <div class="row" style="background:#">
+     <div class="col-md-6 offset-md-3" style="background: #847e55fc">
+         {% block content %}
+
+         {% endblock %}
+    </div>
+
+     </div>
+      </div>
+</main>
+
+
+
+<footer id="footer">
+
+    <div class="inner">
+
+        <div class="bottom">
+
+            <div class="side-left col-60">
+
+                <ul class="nav-footer">
+
+                        <li class="title-dot smaller">
+
+                            <a href="https://www.dapper.fr/contact/">Contact</a>
+
+                        </li>
+
+                        <li class="title-dot smaller">
+
+                            <a href="https://www.dapper.fr/ressources-pedagogiques/videotheque/">Vidéothèque</a>
+
+                        </li>
+
+                        <li class="title-dot smaller">
+
+                            <a href="https://www.dapper.fr/acces-presse/">Accès Presse</a>
+
+                        </li>
+
+                        <li class="title-dot smaller">
+
+                            <a href="https://www.dapper.fr/mentions-legales/">Mentions légales</a>
+
+                        </li>
+
+                        <li class="title-dot smaller">
+
+                            <a href="https://www.dapper.fr/conditions-generales-de-vente/">CGV</a>
+
+                        </li>
+                                    </ul>
+            </div>
+
+            <div class="side-right col-20 list-socials">
+
+
+                <a href="https://www.youtube.com/channel/UCQQcnULVrktBH4bvh6aw5Cg" target="_blank">
+                    <img src="https://www.dapper.fr/wp-content/themes/dapper/assets/img/src/icons/youtube.svg" class="svg">
+                </a>
+
+                <a href="https://twitter.com/fondationdapper/" target="_blank">
+                    <img src="https://www.dapper.fr/wp-content/themes/dapper/assets/img/src/icons/twitter.svg" class="svg">
+                </a>
+
+                <a href="https://www.facebook.com/fondationdapper/" target="_blank">
+                    <img src="https://www.dapper.fr/wp-content/themes/dapper/assets/img/src/icons/facebook.svg" class="svg">
+                </a>
+
+                <a href="https://www.instagram.com/fondationdapper/" target="_blank">
+                    <img src="https://www.dapper.fr/wp-content/themes/dapper/assets/img/src/icons/insta.svg" class="svg">
+                </a>
+
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</div>
+
+</div>
+
+<div id="overlay"></div>
+
+<div id="popin">
+
+    <div id="popin-image" class="popin-c">
+        <div class="img-part">
+            <img class="element" src="">
+        </div>
+
+        <div class="text-part">
+            <div class="d-table">
+                <div class="d-cell">
+                    <p class="title element"></p>
+                    <p class="caption element"></p>
+                    <div class="description element"></div>
+                    <p class="link element">
+                        <a href="">en savoir plus</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="popin-video" class="popin-c">
+
+        <div class="video-part">
+            <div class="d-table">
+                <div class="d-cell">
+                    <p class="title element"></p>
+                    <div class="video element"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="popin-image-audio" class="popin-c">
+
+        <div class="top-part">
+            <div class="img-part">
+                <img class="element" src="">
+            </div>
+
+
+            <div class="audio-part">
+                <div class="d-table">
+                    <div class="d-cell">
+                        <div class="audio element">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="text-part">
+                <div class="d-table">
+                    <div class="d-cell">
+                        <p class="title element"></p>
+                        <p class="caption element"></p>
+                        <div class="description element"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div id="popin-audio">
+
+        <div class="audio-part">
+            <div class="d-table">
+                <div class="d-cell">
+                    <p class="title element"></p>
+                    <div class="audio element">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="number">
+        <span class="current"></span><span>/</span><span class="total"></span>
+    </div>
+
+    <div class="close"><span class="icon-close"></span></div>
+
+    <div class="nav-slideshow">
+        <div class="prev button-nav prev"><span class="icon-arrow_prev"></span></div>
+        <div class="prev button-nav next"><span class="icon-arrow_next"></span></div>
+    </div>
+
+
+
+</div>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"https:\/\/www.dapper.fr\/?wc-ajax=%%endpoint%%","i18n_view_cart":"Voir le panier","cart_url":"https:\/\/www.dapper.fr\/boutique\/panier\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.dapper.fr/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=3.2.6'></script>
+<script type='text/javascript' src='https://www.dapper.fr/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
+<script type='text/javascript' src='https://www.dapper.fr/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"https:\/\/www.dapper.fr\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.dapper.fr/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=3.2.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"https:\/\/www.dapper.fr\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments_d67f14ed8aa1e53531077de73dd42d1d"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.dapper.fr/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=3.2.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var yith_name_your_price = {"ajax_url":"https:\/\/www.dapper.fr\/wp-admin\/admin-ajax.php","mon_decimal_point":".","mon_decimal_error":"Please enter a valid price","mon_negative_error":"Please enter a value greater or equal to 0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.dapper.fr/wp-content/plugins/yith-woocommerce-name-your-price/assets/js/ywcnp_free_frontend.min.js?ver=1.0.9'></script>
+<script type='text/javascript' src='https://www.dapper.fr/wp-content/themes/dapper/assets/js/lib.min.js?v=4&#038;ver=4.9.10'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var dapper = {"url":"https:\/\/www.dapper.fr","theme":"https:\/\/www.dapper.fr\/wp-content\/themes\/dapper","img":"https:\/\/www.dapper.fr\/wp-content\/themes\/dapper\/assets\/img\/src","ajaxurl":"https:\/\/www.dapper.fr\/wp-admin\/admin-ajax.php","lang":"fr"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.dapper.fr/wp-content/themes/dapper/assets/js/master.min.js?v=4&#038;ver=4.9.10'></script>
+
+
+
+<script>
+
+    var WORDS = [{"id":2147,"slug":"olaudah-equiano","word":"Olaudah Equiano","link":"http:\/\/www.dapper.fr\/mot\/olaudah-equiano\/"},{"id":2135,"slug":"appuie-tete","word":"Appuie-t\u00eate","link":"http:\/\/www.dapper.fr\/mot\/appuie-tete\/"},{"id":2129,"slug":"tiy-wara","word":"tiy wara","link":"http:\/\/www.dapper.fr\/mot\/tiy-wara\/"},{"id":2114,"slug":"togu-na","word":"<i>Togu na<\/i>","link":"http:\/\/www.dapper.fr\/mot\/togu-na\/"},{"id":2113,"slug":"eyema-byeri","word":"<i>Eyema byeri<\/i>","link":"http:\/\/www.dapper.fr\/mot\/eyema-byeri\/"},{"id":2112,"slug":"reine-mere","word":"Reine m\u00e8re","link":"http:\/\/www.dapper.fr\/mot\/reine-mere\/"},{"id":2107,"slug":"asantehene","word":"<i>Asantehene<\/i>","link":"http:\/\/www.dapper.fr\/mot\/asantehene\/"},{"id":2091,"slug":"poro","word":"Poro","link":"https:\/\/www.dapper.fr\/mot\/poro\/"},{"id":1922,"slug":"nganga","word":"<i>Nganga<\/i>","link":"http:\/\/www.dapper.fr\/mot\/nganga\/"},{"id":1908,"slug":"kwele","word":"Kwele","link":"http:\/\/www.dapper.fr\/mot\/kwele\/"},{"id":1684,"slug":"iboga","word":"Iboga","link":"http:\/\/www.dapper.fr\/mot\/iboga\/"},{"id":1683,"slug":"bwiti","word":"Bwiti","link":"http:\/\/www.dapper.fr\/mot\/bwiti\/"},{"id":1586,"slug":"vodun","word":"Vodun","link":"http:\/\/www.dapper.fr\/mot\/vodun\/"},{"id":1585,"slug":"scarification","word":"Scarification","link":"http:\/\/www.dapper.fr\/mot\/scarification\/"},{"id":1583,"slug":"raphia","word":"Raphia","link":"http:\/\/www.dapper.fr\/mot\/raphia\/"},{"id":1581,"slug":"orisha","word":"Orisha","link":"http:\/\/www.dapper.fr\/mot\/orisha\/"},{"id":1576,"slug":"ntomo","word":"Ntomo","link":"http:\/\/www.dapper.fr\/mot\/ntomo\/"},{"id":1572,"slug":"masque-cimier","word":"Masque-cimier","link":"http:\/\/www.dapper.fr\/mot\/masque-cimier\/"},{"id":1528,"slug":"mascarades","word":"Mascarades","link":"http:\/\/www.dapper.fr\/mot\/mascarade\/"},{"id":1527,"slug":"kore","word":"Kor\u00e9","link":"http:\/\/www.dapper.fr\/mot\/kore\/"},{"id":1526,"slug":"ibeji","word":"Ibeji","link":"http:\/\/www.dapper.fr\/mot\/ibeji\/"},{"id":1524,"slug":"hogon","word":"Hogon","link":"http:\/\/www.dapper.fr\/mot\/hogon\/"},{"id":1521,"slug":"griot-griotte","word":"Griot, griotte","link":"http:\/\/www.dapper.fr\/mot\/griot-griotte\/"},{"id":1517,"slug":"excision","word":"Excision","link":"http:\/\/www.dapper.fr\/mot\/excision\/"},{"id":1516,"slug":"circoncision","word":"Circoncision","link":"http:\/\/www.dapper.fr\/mot\/circoncision\/"},{"id":1515,"slug":"cabinet-de-curiosite","word":"Cabinet de curiosit\u00e9","link":"http:\/\/www.dapper.fr\/mot\/cabinet-de-curiosite\/"},{"id":1514,"slug":"soudjata-keita","word":"Soudjata Keita","link":"http:\/\/www.dapper.fr\/mot\/soudjata-kei%cc%88ta\/"},{"id":1490,"slug":"kaolin","word":"Kaolin","link":"http:\/\/www.dapper.fr\/mot\/kaolin\/"},{"id":675,"slug":"toussaint-louverture","word":"Toussaint Louverture","link":"http:\/\/www.dapper.fr\/mot\/toussaint-louverture\/"},{"id":517,"slug":"chaka","word":"Chaka","link":"http:\/\/www.dapper.fr\/mot\/zulu-chaka-shaka\/"},{"id":512,"slug":"le-bal-blomet-ex-bal-negre","word":"Le bal Blomet, ex bal n\u00e8gre","link":"http:\/\/www.dapper.fr\/mot\/bal-blomet\/"},{"id":2268,"slug":"blolo-bla-blolo-bian","word":"Blolo bla, blolo bian","link":"http:\/\/www.dapper.fr\/mot\/blolo-bla-blolo-bian\/"},{"id":2321,"slug":"dogon","word":"Dogon","link":"http:\/\/www.dapper.fr\/mot\/dogon\/"},{"id":2326,"slug":"ebanza","word":"Ebanza","link":"http:\/\/www.dapper.fr\/mot\/ebanza\/"},{"id":2335,"slug":"byeri","word":"Byeri","link":"http:\/\/www.dapper.fr\/mot\/byeri\/"},{"id":2351,"slug":"mukuyi","word":"Mukuyi","link":"http:\/\/www.dapper.fr\/mot\/mukuyi\/"},{"id":3059,"slug":"especes-humaines-et-animales","word":"Esp\u00e8ces humaines et animales","link":"http:\/\/www.dapper.fr\/?post_type=word&p=3059"},{"id":3060,"slug":"maternite","word":"Maternit\u00e9","link":"http:\/\/www.dapper.fr\/?post_type=word&p=3060"},{"id":2325,"slug":"soninke","word":"Soninke","link":"http:\/\/www.dapper.fr\/mot\/soninke\/"},{"id":3415,"slug":"masques-fang","word":"Masques fang","link":"https:\/\/www.dapper.fr\/mot\/masques-fang\/"},{"id":3418,"slug":"masques-blancs","word":"Masques blancs","link":"https:\/\/www.dapper.fr\/mot\/masques-blancs\/"},{"id":3420,"slug":"boite-a-poudre","word":"Bo\u00eete \u00e0 poudre","link":"https:\/\/www.dapper.fr\/mot\/boite-a-poudre\/"},{"id":3423,"slug":"masques-ngil","word":"Masques ngil","link":"https:\/\/www.dapper.fr\/mot\/masques-ngil\/"},{"id":3426,"slug":"parures-de-tete","word":"parures de t\u00eate","link":"https:\/\/www.dapper.fr\/mot\/parures-de-tete\/"},{"id":3430,"slug":"armes","word":"armes","link":"https:\/\/www.dapper.fr\/mot\/armes\/"},{"id":3432,"slug":"masques-noirs","word":"masques noirs","link":"https:\/\/www.dapper.fr\/mot\/masques-noirs\/"},{"id":3434,"slug":"masques-gon","word":"Masques gon","link":"https:\/\/www.dapper.fr\/mot\/masques-gon\/"}];
+    var prodLib = {};
+    for(var i=0;i<WORDS.length;i++){
+        prodLib[WORDS[i].id] = WORDS[i];
+    }
+</script>
+
+</body>
+</html>
